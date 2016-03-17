@@ -1,14 +1,14 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
-[RequireComponent(typeof(PlayerController))]
-public class Player : MonoBehaviour {
+[RequireComponent(typeof(_PlayerController))]
+public class _Player : MonoBehaviour {
 	public float moveSpeed = 3f;
 
-	PlayerController controller;
+	_PlayerController controller;
 	Camera viewCamera;
 	// Use this for initialization
 	void Start () {
-		controller = GetComponent<PlayerController> ();
+		controller = GetComponent<_PlayerController> ();
 		viewCamera = Camera.main;
 	}
 	
