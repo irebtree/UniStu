@@ -18,4 +18,9 @@ public class Projectile : MonoBehaviour {
 	void Update () {
 	
 	}
+
+	public void RemoveForce()
+	{
+		mRG.velocity = Vector2.zero;
+	}
 }
