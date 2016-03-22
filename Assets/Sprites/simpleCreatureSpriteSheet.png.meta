@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 3c8caba6685d79241b7c2c16858b6059
-timeCreated: 1439917221
-licenseType: Free
+timeCreated: 1458538484
+licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
     21300000: simpleCreatureSpriteSheet_0
@@ -44,6 +44,7 @@ TextureImporter:
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
+  allowsAlphaSplitting: 0
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
