@@ -12,13 +12,20 @@ public class PlayerController : MonoBehaviour {
 	public bool grouded = false;
 	public float groundCheckRedius = 0.2f;
 	public Transform groundCheck;
-	public float jumpHeight;
+	public float maxJumpHeight = 10;
+	public float minJumpHeight = 4;
 	public LayerMask groundLayer;
 
 	public Transform gunTip;
 	public GameObject bullet;
 	float fireRate = 0.5f;
 	float fireNext;
+	 
+	public BoxCollider2D characterBoundCollider;
+	void Awake()
+	{
+
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -30,14 +37,33 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(grouded && Input.GetAxis("Vertical") > 0)
+//		if(grouded && Input.GetAxis("Vertical") > 0)
+//		{
+//			grouded = false;
+//			anim.SetBool(AnimInfo.isGround, grouded);
+//			mRigibody.AddForce(new Vector2(0f, jumpHeight));
+//		}
+
+		if(grouded && Input.GetKeyDown(KeyCode.Space))
 		{
 			grouded = false;
 			anim.SetBool(AnimInfo.isGround, grouded);
-			mRigibody.AddForce(new Vector2(0f, jumpHeight));
+			//mRigibody.AddForce(new Vector2(0f, jumpHeight));
+			mRigibody.velocity = new Vector2(mRigibody.velocity.x, maxJumpHeight);
+
 		}
 
-		if(Input.GetKey(KeyCode.Space))
+		if(Input.GetKeyUp(KeyCode.Space))
+		{
+			//anim.SetBool(AnimInfo.isGround, grouded);
+			//mRigibody.AddForce(new Vector2(0f, jumpHeight));
+			if(mRigibody.velocity.y > minJumpHeight)
+				mRigibody.velocity = new Vector2(mRigibody.velocity.x, minJumpHeight);
+			
+		}
+
+		//Debug.Log(mRigibody.velocity);
+		if(Input.GetKey(KeyCode.LeftControl))
 			Shoot();
 	
 	}

@@ -160,7 +160,13 @@ public class TestEncrypt : MonoBehaviour {
         byte[] encData = www.bytes;
         byte[] deData = Decrypt(encData);
 
-        AssetBundle ab = AssetBundle.LoadFromMemory(deData);
+       
+		#if UNITY_5_2
+		AssetBundleCreateRequest abc = AssetBundle.CreateFromMemory(deData);
+		AssetBundle ab = abc.assetBundle;
+		#else
+		AssetBundle ab = AssetBundle.LoadFromMemory(deData);
+        #endif
         yield return ab;
        // AssetBundle ab = www.assetBundle;
         GameObject go = (GameObject) ab.LoadAsset("template00");
