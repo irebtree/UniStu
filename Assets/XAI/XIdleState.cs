@@ -2,14 +2,23 @@
 using System.Collections;
 
 public class XIdleState : XBaseState {
-
-	// Use this for initialization
-	void Start () {
-	
+	public override void InitState (XAIBehaviours ai)
+	{
+		throw new System.NotImplementedException ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public override void EnterState (XAIBehaviours ai)
+	{
+		throw new System.NotImplementedException ();
+	}
+
+	public override void UpdateState (XAIBehaviours ai)
+	{
+		throw new System.NotImplementedException ();
+	}
+
+	public override void ExitState (XAIBehaviours ai)
+	{
+		throw new System.NotImplementedException ();
 	}
 }

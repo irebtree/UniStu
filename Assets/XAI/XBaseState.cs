@@ -1,28 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class XBaseState : MonoBehaviour {
+public abstract class XBaseState {
+	public new string name;
 	public string _animation;
 	public AudioClip audioClip = null;
-	// Use this for initialization
+
 	void Start () {
 	
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 	
 	}
 
-	public virtual void InitState (XAIBehaviours ai)
-	{}
+	public override string ToString ()
+	{
+		return name;
+	}
 
-	public virtual void HandleReason (XAIBehaviours ai)
-	{}
+	public abstract void InitState (XAIBehaviours ai);
 
-	public virtual void HandleAction (XAIBehaviours ai)
-	{}
+	public abstract void EnterState (XAIBehaviours ai);
 
-	public virtual void EndedState (XAIBehaviours ai)
-	{}
+	public abstract void UpdateState (XAIBehaviours ai);
+
+	public abstract void ExitState (XAIBehaviours ai);
 }

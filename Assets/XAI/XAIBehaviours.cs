@@ -12,6 +12,7 @@ public class XAIBehaviours : MonoBehaviour {
 	public XBaseState[] states = new XBaseState[0];
 
 	public LayerMask raycastLayers = -1;
+
 	public float health = 100.0f;
 	public float maxHealth = 100.0f;
 
@@ -20,7 +21,7 @@ public class XAIBehaviours : MonoBehaviour {
 	protected Transform trans; 
 	public Vector3 currentDestination { get; private set; }
 
-	#region FieldOfView
+	#region FieldOfView 
 	[Range(0,360)]
 	public float viewAngle = 172;
 
@@ -46,10 +47,13 @@ public class XAIBehaviours : MonoBehaviour {
 		viewMesh.name = "view mesh";
 		if(viewMeshFilter != null)
 			viewMeshFilter.mesh = viewMesh;
+
+		Debug.Log( DirFromAngle(30, true));
 	}
 
 	void Init()
 	{
+		trans = this.transform;
 		currentDestination = transform.position;
 
 		SetActive(true);
@@ -57,7 +61,18 @@ public class XAIBehaviours : MonoBehaviour {
 	
 
 	void Update () {
-		DrawFieldOfView();
+		//DrawFieldOfView();
+	}
+		
+
+	public XBaseState[] GetAllStates()
+	{
+		return states;
+	}
+
+	public void ReplaceAllStates(XBaseState[] states)
+	{
+		this.states = states;
 	}
 
 	public void SetActive(bool isActive)
@@ -78,7 +93,7 @@ public class XAIBehaviours : MonoBehaviour {
 
 		if ( previousState != null )
 		{
-			previousState.EndedState(this);
+			previousState.ExitState(this);
 		}
 
 		currentState = newState;
@@ -91,7 +106,7 @@ public class XAIBehaviours : MonoBehaviour {
 
 	}
 
-
+	#region FieldOfView function
 	IEnumerator FindTargets(float delay)
 	{
 		while(true)
@@ -193,5 +208,14 @@ public class XAIBehaviours : MonoBehaviour {
 			dis = _dis;
 			angle = _angle;
 		}
+	} 
+
+	#endregion FieldOfView function
+
+	void OnDrawGizmos()
+	{
+		//Vector3 dir = DirFromAngle(45, true);
+		//Gizmos.color = Color.red;
+		//Gizmos.DrawLine(Vector3.zero,  dir);
 	}
 }
