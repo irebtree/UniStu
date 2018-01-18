@@ -1,0 +1,18 @@
+<item>
+  <ConfigVersion value="1" />
+  <Time value="10/27/2016 13:51:38" />
+  <ExpTotal value="15" />
+  <Gem value="13800" />
+  <Gold value="646.97518157959" />
+  <Elixir value="752.382850646973" />
+  <Shield value="0" />
+  <Building Type="0" Level="1" TilePosX="16" TilePosY="25" InUpgrade="False" UpgradeCompleted="False" UpgradeTimeLeft="0" Production="0" />
+  <Building Type="1" Level="1" TilePosX="34" TilePosY="23" InUpgrade="False" UpgradeCompleted="False" UpgradeTimeLeft="0" Production="0" />
+  <Building Type="4" Level="1" TilePosX="21" TilePosY="31" InUpgrade="False" UpgradeCompleted="False" UpgradeTimeLeft="0" Production="15.04926" />
+  <Building Type="3" Level="1" TilePosX="22" TilePosY="19" InUpgrade="False" UpgradeCompleted="False" UpgradeTimeLeft="0" Production="15.15681" />
+  <Building Type="7" Level="1" TilePosX="21" TilePosY="16" InUpgrade="False" UpgradeCompleted="False" UpgradeTimeLeft="0" Production="0" />
+  <Building Type="1" Level="1" TilePosX="25" TilePosY="20" InUpgrade="False" UpgradeCompleted="False" UpgradeTimeLeft="0" Production="0" />
+  <Building Type="5" Level="1" TilePosX="45" TilePosY="21" InUpgrade="False" UpgradeCompleted="False" UpgradeTimeLeft="0" Production="0" />
+  <Building Type="6" Level="1" TilePosX="18" TilePosY="21" InUpgrade="False" UpgradeCompleted="False" UpgradeTimeLeft="0" Production="0" />
+  <Building Type="1" Level="1" TilePosX="32" TilePosY="29" InUpgrade="False" UpgradeCompleted="False" UpgradeTimeLeft="0" Production="0" />
+</item>
